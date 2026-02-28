@@ -1,1 +1,1 @@
-Araç alım, emlak ve e-ticaret gibi listeleme ağırlıklı sistemlerde kullanılabilecek orta düzey bir SQL arama yapısıdır.
+Araç alım, emlak ve e-ticaret gibi listeleme ağırlıklı sistemlerde; çoklu filtreleme, aralık bazlı sorgular,sıralama ve sayfalama gibi temel ihtiyaçları karşılayabilecek, ilişkili tablolarla (JOIN) çalışabilen ve dinamik parametre yönetimini destekleyen orta düzey bir SQL arama yapısıdır.
