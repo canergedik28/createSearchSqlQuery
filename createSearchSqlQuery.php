@@ -19,7 +19,7 @@ class CreateSearchSqlQuery {
     private $createSearchSqlQuery;
 
    public function createSearchQuery(): string{
-        $this->createSearchSqlQuery =  "SELECT {column} from test  as tm
+        $this->createSearchSqlQuery =  "SELECT {column} from test  as ts
         LEFT JOIN test1 as ts1 ON ts1.testID = ts.test_id";
         if($this->test){
           $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
