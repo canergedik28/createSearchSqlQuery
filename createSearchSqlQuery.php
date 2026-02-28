@@ -1,6 +1,6 @@
 <?php
 
-class createSearchSqlQuery {
+class CreateSearchSqlQuery {
 
     private $test;
 
