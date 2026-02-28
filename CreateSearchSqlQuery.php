@@ -61,8 +61,6 @@ class CreateSearchSqlQuery {
           $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' price <='.$this->price_max.'';
         } 
 
-
-       
         if($this->order){
           switch($this->order){
              case 1 : $this->createSearchSqlQuery .= ' ORDER BY created_date ASC ';  break;
