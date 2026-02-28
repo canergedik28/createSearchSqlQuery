@@ -14,6 +14,8 @@ class CreateSearchSqlQuery {
 
     private $page;
 
+    private $order;
+
     private static $pageSize = 20;
 
     private $createSearchSqlQuery;
@@ -43,6 +45,12 @@ class CreateSearchSqlQuery {
           $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
           $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' test4="'.$this->test4.'"';
         } 
+        if($this->order){
+          switch($this->order){
+             case 1 : $this->createSearchSqlQuery .= ' ORDER BY created_date ASC ';  break;
+             case 2 : $this->createSearchSqlQuery .= ' ORDER BY created_date DESC ';  break;
+          }
+        }
         
         if($this->page){
             $this->createSearchSqlQuery .=   " LIMIT ".self::$pageSize." OFFSET ".($this->page == 1 ? "0" : self::$pageSize*($this->page-1));
