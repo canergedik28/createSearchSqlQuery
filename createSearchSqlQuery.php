@@ -21,7 +21,7 @@ class createSearchSqlQuery {
    public function createSearchQuery(): string{
         $this->createSearchSqlQuery =  "SELECT {column} from test  as tm
         LEFT JOIN test1 as ah ON test1.testID = test.test_id";
-        if($this->test && $this->test != ''){
+        if($this->test){
           $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
           $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' test="'.$this->test.'"';
         } 
