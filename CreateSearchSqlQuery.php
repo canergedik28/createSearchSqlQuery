@@ -22,6 +22,8 @@ class CreateSearchSqlQuery {
 
     private static $pageSize = 20;
 
+    private $is_active = True;
+
     private $createSearchSqlQuery;
 
    public function createSearchQuery(): string{
@@ -58,6 +60,12 @@ class CreateSearchSqlQuery {
         if($this->price_max){
           $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
           $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' price <='.$this->price_max.'';
+        } 
+
+       
+        if($this->is_active){
+          $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
+          $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' is_active ='.$this->is_active.'';
         } 
 
         if($this->order){
