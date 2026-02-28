@@ -14,7 +14,7 @@ class CreateSearchSqlQuery {
 
     private $page;
 
-    private $order;
+    private $order = 2;
 
     private static $pageSize = 20;
 
@@ -49,6 +49,7 @@ class CreateSearchSqlQuery {
           switch($this->order){
              case 1 : $this->createSearchSqlQuery .= ' ORDER BY created_date ASC ';  break;
              case 2 : $this->createSearchSqlQuery .= ' ORDER BY created_date DESC ';  break;
+             default: $this->createSearchSqlQuery .= ' ORDER BY created_date DESC '; break;
           }
         }
         
