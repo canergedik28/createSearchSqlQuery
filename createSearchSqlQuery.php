@@ -45,7 +45,7 @@ class createSearchSqlQuery {
         } 
         
         if($this->page){
-            $this->createSearchSqlQuery .=   " LIMIT ".$this->pageSize." OFFSET ".($this->page == 1 ? "0" : $this->pageSize*($this->page-1));
+            $this->createSearchSqlQuery .=   " LIMIT ".self::$pageSize." OFFSET ".($this->page == 1 ? "0" : self::$pageSize*($this->page-1));
         }
         return $this->createSearchSqlQuery;
       }
