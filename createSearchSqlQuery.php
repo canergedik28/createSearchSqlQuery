@@ -36,12 +36,13 @@ class createSearchSqlQuery {
 
         if($this->test3){
           $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
-          $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' test3="'.$this->test2.'"';
+          $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' test3="'.$this->test3.'"';
         } 
 
         if($this->test4){
           $this->createSearchSqlQuery =  preg_match('/WHERE/',$this->createSearchSqlQuery)   ? $this->createSearchSqlQuery : $this->createSearchSqlQuery .= ' WHERE';
-          $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' test4="'.$this->test2.'"';
+          $this->createSearchSqlQuery .=  (substr($this->createSearchSqlQuery,-5,  null)  == "WHERE" ? ' ' : ' AND '). ' test4="'.$this->test4
+              .'"';
         } 
         
         if($this->page){
